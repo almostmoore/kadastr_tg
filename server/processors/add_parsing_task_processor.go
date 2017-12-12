@@ -3,7 +3,6 @@ package processors
 import (
 	"bytes"
 	"fmt"
-	"github.com/almostmoore/kadastr/feature"
 	"gopkg.in/telegram-bot-api.v4"
 	"regexp"
 	"github.com/almostmoore/kadastr/api_server"
@@ -56,7 +55,7 @@ func (aptp AddParsingTaskProcessor) extractQuarters(str string) []string {
 
 	data := make([]string, 0, len(sub))
 	for _, s := range sub {
-		data = append(data, feature.ClearLeadZero(s[1]))
+		data = append(data, s[1])
 	}
 
 	return data
